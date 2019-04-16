@@ -33,6 +33,19 @@ x = Sigmoid(fc1(x))
 x = Softmax(fc2(x))
 ```
 
-Since the total size of the Dataset is small, I used a Stochastic Gradient Descentover each image for each epoch rather than for a batch of images.
+Since the total size of the Dataset is small, I used a Stochastic Gradient Descentover each image for each epoch rather than for a batch of images. The parameters that were used:
 
-Before training, the accuracy of the network was `10.34%` which is as accurate as random guessing. After training, over `20 epochs`, our accuracy reached `92.2%` which is resonable considering the dataset contains numbers that even humans have difficulty detecting e.g the 2 in figure 1.
+```
+epochs = 20
+test_size = 30%
+SGD learning rate = 0.2
+momentum = 0
+dampening = 0
+loss = MSE loss
+```
+
+Before training, the accuracy of the network was `10.34%` which is as accurate as random guessing. After training, over `20 epochs`, our accuracy reached `92.2%` which is resonable considering the dataset contains numbers that even humans have difficulty detecting e.g the 2 in figure 1. Below are figures of our training process across epochs.
+
+<p align="center">
+  <img width="350"  src="./accuracyANN.png"><img width="350"  src="./lossANN.png">
+</p>
