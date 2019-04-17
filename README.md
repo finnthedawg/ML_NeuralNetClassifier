@@ -63,4 +63,13 @@ The training of the weights also differed. There was fluctuating accuracy past t
 
 ## Implementation of L2 regularized logistic regression with (One vs Many).
 
-To compare my NN model with a more traditional model, I implemented
+To compare my NN model, I implemented a logistic regression algorithm using L2 regularization. I normalized my data over `mean()/StandardDev()` and I used a train/test split of `30%`. For each OvM class, I trained it's respective model with the following parameters:
+```
+iterations = 2000
+learn_rate = 0.5
+reg_lambda = 0.5
+```
+
+Rather than using `vthreshold()` for each class which converts the probability to `0` or `1`, I kept the probability values and used these over each class for each datapoint to determine the most likely class. I tested this on my test set, achieving an accuracy of:`80%`
+
+It seems that the simply 2 layer ANN was more effective at predicting the class. Nevertheless, with a random-guess probability of `10%`, the logitstic regression method is quite effective as well.
